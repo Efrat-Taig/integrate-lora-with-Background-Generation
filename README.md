@@ -18,8 +18,10 @@ Before you begin, make sure you have:
 
 - A trained LoRA model (see our previous guide on LoRA training)
 - A compatible background generation model (model card [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen))
-- Required libraries and installation specified [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen)
-
+- Required libraries and installations specified [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen)
+- Recommended:
+  - Python 3.8+
+  - CUDA-compatible GPU with at least 8GB VRAM
 ## Important Note
 
 Remember that LoRA models must be connected to the same type of foundation model they were trained on. For example, a LoRA model trained on [Bria 2.3](https://huggingface.co/briaai/BRIA-2.3) can only be connected to other Bria 2.3-based models, not to SDXL or other model types.
@@ -30,21 +32,25 @@ Remember that LoRA models must be connected to the same type of foundation model
 
 Follow these steps to get started with connecting your LoRA model to a background generator:
 
-1. **Run the Initial Code**
-   - First, run the initial code [run_BG.py](https://github.com/Efrat-Taig/integrate-lora-with-Background-Generation/blob/main/run_BG.py) to ensure everything is set up correctly and all installations are in order.
-   - This should be a straightforward process, following the installation instructions in the model card [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen).
-   - If you encounter any issues during this step, please don't hesitate to reach out for assistance.
+1. **Set Up and Test Background Change (the ControlNet Backroung Generation)**
+   - Begin by running the initial code [run_BG.py](https://github.com/Efrat-Taig/integrate-lora-with-Background-Generation/blob/main/run_BG.py). This script is designed to test the background change functionality without LoRA integration.
+   - The purpose of this step is to ensure that your environment is correctly set up and that the basic background generation model is working properly.
+   - Follow the installation instructions provided in the model card [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen).
+   - If you encounter any issues during this setup and testing phase, please don't hesitate to reach out for assistance. It's important to have this working correctly before proceeding to LoRA integration.
+  
+     
 
 2. **Select a Foreground Image**
    - Choose an image from which you'll extract the foreground object.
    - For example, I used my profile picture, but you can select any image you prefer.
 
 3. **Connect the LoRA Model**
-   - We'll now connect the LoRA model that we trained in the previous tutorial.
-   - Run the script [run_BG_with_LORA.py](https://github.com/Efrat-Taig/integrate-lora-with-Background-Generation/blob/main/run_BG_with_LORA.py) to combine the LoRA model with the background generator.
+   
+   - We'll now connect the LoRA model that we trained in the previous tutorial to Bria 2.3 foundation model.
+   -  We'll combine the LoRA model with the background generator.
   
 
-  ## Results
+  ## Lora Model
 
 Before we dive into the results of connecting our LoRA model to a background generator, it's important to understand the context of our work. This project builds upon our previous repository on training LoRA models, which you can find [here](https://github.com/Efrat-Taig/training-lora/tree/main).
 
@@ -58,18 +64,18 @@ In our previous work:
 Here's a sample image from our dataset:
 Sample from my [Modern Blurred SeaView](https://huggingface.co/datasets/Negev900/Modern_Blurred_SeaView) Dataset:
 
-<img src="https://github.com/Efrat-Taig/training-lora/blob/main/Data_set_sample.png" width="400">>
+<img src="https://github.com/Efrat-Taig/training-lora/blob/main/Data_set_sample.png" width="600">
 
 
 And here's an example of how our LoRA model improved over time:
 
-<img src="https://github.com/Efrat-Taig/training-lora/blob/main/lora_res_1.png" width="400">
+<img src="https://github.com/Efrat-Taig/training-lora/blob/main/lora_res_1.png" width="600">
 
 
-For a full understanding of the LoRA training process and to see more examples, please refer to our previous repository [here](https://github.com/Efrat-Taig/training-lora/tree/main)or to this [paper](https://github.com/Efrat-Taig/training-lora/tree/main)
+For a full understanding of the LoRA training process and to see more examples, please refer to our previous repository [here](https://github.com/Efrat-Taig/training-lora/tree/main) or to this [paper](https://github.com/Efrat-Taig/training-lora/tree/main)
 
 
-### Current Project: Connecting LoRA to Background Generator
+## Current Project: Connecting LoRA to Background Generator
 
 In this project, we're taking the next step: connecting our trained LoRA model to a background generation model. This allows us to apply the style and characteristics learned by our LoRA model to generate new backgrounds while preserving foreground subjects.
 
@@ -85,15 +91,7 @@ The main purpose of running this script is to integrate our trained LoRA model w
 
 By running this script, we're essentially telling the background generation model to consider the patterns and styles it learned from our specific dataset (in this case, modern blurred sea views) when creating new backgrounds.
 
-#### How to Run the Script
 
-To run the script, use the following command in your terminal:
-
-```
-python run_BG_with_LORA.py
-```
-
-Make sure you have all the necessary dependencies installed and that you're in the correct directory before running the script.
 
 #### Expected Outcome
 
@@ -103,26 +101,25 @@ The following image series demonstrates the evolution of our background generati
 
 <img src="https://github.com/Efrat-Taig/integrate-lora-with-Background-Generation/blob/main/Lora_bg.png"  alt="LoRA Background Generation Progress">
 
+
+
+
+
 ## Final Notes
 
-This project demonstrates the powerful capabilities of integrating LoRA models with background generation techniques. By fine-tuning our model on a specific dataset of modern, blurred sea views, we've shown how LoRA can significantly enhance the quality and style-consistency of generated backgrounds.
-
-Key takeaways:
-- LoRA integration allows for more controlled and stylistically consistent background generation.
-- The progression through LoRA checkpoints shows clear improvements in adhering to the desired style.
-- This technique preserves the original subject while transforming the background, offering a versatile tool for image editing.
-
-We encourage you to experiment with this approach using your own datasets and style preferences. The possibilities for creative applications are vast, from personalized photo editing to creating themed visual content.
-
+This project demonstrates the powerful capabilities of integrating LoRA models with background generation techniques. We encourage you to experiment with this approach using your own datasets and style preferences.
 
 We welcome your feedback, contributions, and any creative uses you find for this technology. If you have questions or want to share your results, please open an issue or submit a pull request in this repository.
 
+For further assistance or collaboration opportunities, feel free to reach out:
+- Email: efrat@bria.ai
+- [LinkedIn](https://www.linkedin.com/in/efrattaig/)
 
-If you have any questions or need further assistance, feel free to reach out to me here, or connect via email (efrat@bria.ai) and [LinkedIn](https://www.linkedin.com/in/efrattaig/). 
+Academic users interested in accessing the model can [register here](https://docs.google.com/forms/d/1sSjxqS_2T4RB0dxnPjpygm7EXxa3RYNm2e4PUXQKnLo/edit) for access and further details.
 
-For academic users interested in accessing the model, please [register here]([link](https://docs.google.com/forms/d/1sSjxqS_2T4RB0dxnPjpygm7EXxa3RYNm2e4PUXQKnLo/edit)) for access and further details. You can also refer to this [model information link](https://huggingface.co/briaai) or [article](https://medium.com/@efrat_37973/bridging-the-gap-from-academic-ai-to-ethical-business-models-89327517b940) for additional insights.
+For additional insights, refer to this [model information link](https://huggingface.co/briaai) or [article](https://medium.com/@efrat_37973/bridging-the-gap-from-academic-ai-to-ethical-business-models-89327517b940).
 
-
+Tags: #MachineLearning #ComputerVision #LoRA #BackgroundGeneration #AI #DeepLearning #ImageProcessing #Bria #HuggingFace
 
 
 
