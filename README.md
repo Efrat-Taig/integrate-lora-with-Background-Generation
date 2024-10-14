@@ -104,3 +104,5 @@ The following image series demonstrates the evolution of our background generati
 <img src="https://github.com/Efrat-Taig/training-lora/blob/main/Lora_bg.png">
 
 
+
+
