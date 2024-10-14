@@ -101,7 +101,27 @@ After running the script, you should be able to generate new backgrounds that no
 
 The following image series demonstrates the evolution of our background generation process, starting from the original picture, progressing through a basic background swap without LoRA, and then showing the improvements achieved at various checkpoints of our LoRA model integration:
 
-<img src="https://github.com/Efrat-Taig/training-lora/blob/main/Lora_bg.png" width="400">
+<img src="https://github.com/Efrat-Taig/integrate-lora-with-Background-Generation/blob/main/Lora_bg.png"  alt="LoRA Background Generation Progress">
+
+## Final Notes
+
+This project demonstrates the powerful capabilities of integrating LoRA models with background generation techniques. By fine-tuning our model on a specific dataset of modern, blurred sea views, we've shown how LoRA can significantly enhance the quality and style-consistency of generated backgrounds.
+
+Key takeaways:
+- LoRA integration allows for more controlled and stylistically consistent background generation.
+- The progression through LoRA checkpoints shows clear improvements in adhering to the desired style.
+- This technique preserves the original subject while transforming the background, offering a versatile tool for image editing.
+
+We encourage you to experiment with this approach using your own datasets and style preferences. The possibilities for creative applications are vast, from personalized photo editing to creating themed visual content.
+
+
+We welcome your feedback, contributions, and any creative uses you find for this technology. If you have questions or want to share your results, please open an issue or submit a pull request in this repository.
+
+
+If you have any questions or need further assistance, feel free to reach out to me here, or connect via email (efrat@bria.ai) and [LinkedIn](https://www.linkedin.com/in/efrattaig/). 
+
+For academic users interested in accessing the model, please [register here]([link](https://docs.google.com/forms/d/1sSjxqS_2T4RB0dxnPjpygm7EXxa3RYNm2e4PUXQKnLo/edit)) for access and further details. You can also refer to this [model information link](https://huggingface.co/briaai) or [article](https://medium.com/@efrat_37973/bridging-the-gap-from-academic-ai-to-ethical-business-models-89327517b940) for additional insights.
+
 
 
 
