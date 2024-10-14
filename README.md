@@ -101,5 +101,6 @@ After running the script, you should be able to generate new backgrounds that no
 
 The following image series demonstrates the evolution of our background generation process, starting from the original picture, progressing through a basic background swap without LoRA, and then showing the improvements achieved at various checkpoints of our LoRA model integration:
 
-<img src="https://github.com/Efrat-Taig/training-lora/blob/main/Lora_bg.png" width="600">
+<img src="https://github.com/Efrat-Taig/training-lora/blob/main/Lora_bg.png">
+
 
