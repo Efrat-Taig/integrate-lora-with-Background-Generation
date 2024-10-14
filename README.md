@@ -18,7 +18,7 @@ Before you begin, make sure you have:
 
 - A trained LoRA model (see our previous guide on LoRA training)
 - A compatible background generation model (model card [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen))
-- Required libraries and instalsion specifed [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen)
+- Required libraries and installation specified [here](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen)
 
 ## Important Note
 
