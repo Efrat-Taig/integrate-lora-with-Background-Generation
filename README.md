@@ -1,6 +1,6 @@
 # integrate-lora-with-Background-Generation
 
-This repository provides guidance and tools for connecting a LoRA (Low-Rank Adaptation) model to a Bira's [background generation model](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen). This process allows you to enhance the capabilities of your text-to-image generation pipeline by combining the strengths of both models.
+This repository provides guidance and tools for connecting a LoRA (Low-Rank Adaptation) model to a Bria's [background generation model](https://huggingface.co/briaai/BRIA-2.3-ControlNet-BG-Gen). This process allows you to enhance the capabilities of your text-to-image generation pipeline by combining the strengths of both models.
 
 ## Overview
 
